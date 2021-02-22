@@ -1,0 +1,28 @@
+<h1>Listing Regards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Regard</th>
+      <th>Regardn</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for regards <- @regards do %>
+    <tr>
+      <td><%= regards.regard %></td>
+      <td><%= regards.regardN %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.regards_path(@conn, :show, regards) %></span>
+        <span><%= link "Edit", to: Routes.regards_path(@conn, :edit, regards) %></span>
+        <span><%= link "Delete", to: Routes.regards_path(@conn, :delete, regards), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Regards", to: Routes.regards_path(@conn, :new) %></span>

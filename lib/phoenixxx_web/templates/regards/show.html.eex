@@ -1,0 +1,18 @@
+<h1>Show Regards</h1>
+
+<ul>
+
+  <li>
+    <strong>Regard:</strong>
+    <%= @regards.regard %>
+  </li>
+
+  <li>
+    <strong>Regardn:</strong>
+    <%= @regards.regardN %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.regards_path(@conn, :edit, @regards) %></span>
+<span><%= link "Back", to: Routes.regards_path(@conn, :index) %></span>

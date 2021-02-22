@@ -1,0 +1,5 @@
+<h1>Edit Super regards</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.super_regards_path(@conn, :update, @super_regards)) %>
+
+<span><%= link "Back", to: Routes.super_regards_path(@conn, :index) %></span>

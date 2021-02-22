@@ -1,0 +1,13 @@
+<h1>Show Super regards</h1>
+
+<ul>
+
+  <li>
+    <strong>Regard:</strong>
+    <%= @super_regards.regard %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.super_regards_path(@conn, :edit, @super_regards) %></span>
+<span><%= link "Back", to: Routes.super_regards_path(@conn, :index) %></span>

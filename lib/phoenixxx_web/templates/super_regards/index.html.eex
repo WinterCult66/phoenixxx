@@ -1,0 +1,26 @@
+<h1>Listing Superregards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Regard</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for super_regards <- @superregards do %>
+    <tr>
+      <td><%= super_regards.regard %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.super_regards_path(@conn, :show, super_regards) %></span>
+        <span><%= link "Edit", to: Routes.super_regards_path(@conn, :edit, super_regards) %></span>
+        <span><%= link "Delete", to: Routes.super_regards_path(@conn, :delete, super_regards), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Super regards", to: Routes.super_regards_path(@conn, :new) %></span>
