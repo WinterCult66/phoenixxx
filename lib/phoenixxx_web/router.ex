@@ -17,7 +17,7 @@ defmodule PhoenixxxWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    resources "/users", TopicController
+    resources "/topics", TopicController
 
   end
 
