@@ -59,4 +59,8 @@ defmodule PhoenixxxWeb.TopicController do
     |> put_flash(:info, "Topic deleted successfully.")
     |> redirect(to: Routes.topic_path(conn, :index))
   end
+
+  def delete_all(conn) do
+    HelperTopic.delete_all()
+  end
 end

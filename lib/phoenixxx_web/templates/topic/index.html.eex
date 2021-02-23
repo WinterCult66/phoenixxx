@@ -6,8 +6,8 @@
       <th>Title</th>
       <th>Growth</th>
       <th>Description</th>
-
-      <th></th>
+      <th>Update DateTime</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +16,7 @@
       <td><%= topic.title %></td>
       <td><%= topic.growth %></td>
       <td><%= topic.description %></td>
+      <td><%= topic.updated_at %></td>
 
       <td>
         <span><%= link "Show", to: Routes.topic_path(@conn, :show, topic) %></span>

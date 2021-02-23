@@ -19,7 +19,6 @@ defmodule ExplodingTopics2 do
     [{_, _, [description]}] = Floki.find(topic, ".tileDescription")
     object = load_object_by_title("#{title}")
     growth_tmp = if object != nil, do: object.growth, else: nil
-
     cond do
       growth_tmp == nil ->
         create_topic(%{title: title, growth: "#{growth}", description: description})

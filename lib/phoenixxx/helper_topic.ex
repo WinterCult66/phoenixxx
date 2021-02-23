@@ -106,4 +106,8 @@ defmodule Phoenixxx.HelperTopic do
     query = from(t in Topic, where: t.title == ^title, select: t)
     Repo.one(query)
   end
+
+  def delete_all() do
+    #Repo.delete_all
+  end
 end
