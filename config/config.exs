@@ -7,9 +7,6 @@
 # General application configuration
 use Mix.Config
 
-
-
-
 config :phoenixxx,
   ecto_repos: [Phoenixxx.Repo]
 
@@ -28,13 +25,12 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-
 ##### JOB EVERY SECOND
-#config :phoenixxx, Job.Scheduler,
+# config :phoenixxx, Job.Scheduler,
 
- # jobs: [
- #   {{:extended, "* * * * *"},      {Job.Task, :print, []}},
- # ]
+# jobs: [
+#   {{:extended, "* * * * *"},      {Job.Task, :print, []}},
+# ]
 ##### JOB EVERY SECOND
 
 # Import environment specific config. This must remain at the bottom

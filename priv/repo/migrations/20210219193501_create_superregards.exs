@@ -7,6 +7,5 @@ defmodule Phoenixxx.Repo.Migrations.CreateSuperregards do
 
       timestamps()
     end
-
   end
 end

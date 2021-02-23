@@ -1,0 +1,5 @@
+<h1>Edit Average</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.average_path(@conn, :update, @average)) %>
+
+<span><%= link "Back", to: Routes.average_path(@conn, :index) %></span>

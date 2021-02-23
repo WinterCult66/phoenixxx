@@ -46,7 +46,10 @@ defmodule PhoenixxxWeb.SuperRegardsControllerTest do
   describe "edit super_regards" do
     setup [:create_super_regards]
 
-    test "renders form for editing chosen super_regards", %{conn: conn, super_regards: super_regards} do
+    test "renders form for editing chosen super_regards", %{
+      conn: conn,
+      super_regards: super_regards
+    } do
       conn = get(conn, Routes.super_regards_path(conn, :edit, super_regards))
       assert html_response(conn, 200) =~ "Edit Super regards"
     end
@@ -56,7 +59,11 @@ defmodule PhoenixxxWeb.SuperRegardsControllerTest do
     setup [:create_super_regards]
 
     test "redirects when data is valid", %{conn: conn, super_regards: super_regards} do
-      conn = put(conn, Routes.super_regards_path(conn, :update, super_regards), super_regards: @update_attrs)
+      conn =
+        put(conn, Routes.super_regards_path(conn, :update, super_regards),
+          super_regards: @update_attrs
+        )
+
       assert redirected_to(conn) == Routes.super_regards_path(conn, :show, super_regards)
 
       conn = get(conn, Routes.super_regards_path(conn, :show, super_regards))
@@ -64,7 +71,11 @@ defmodule PhoenixxxWeb.SuperRegardsControllerTest do
     end
 
     test "renders errors when data is invalid", %{conn: conn, super_regards: super_regards} do
-      conn = put(conn, Routes.super_regards_path(conn, :update, super_regards), super_regards: @invalid_attrs)
+      conn =
+        put(conn, Routes.super_regards_path(conn, :update, super_regards),
+          super_regards: @invalid_attrs
+        )
+
       assert html_response(conn, 200) =~ "Edit Super regards"
     end
   end
@@ -75,6 +86,7 @@ defmodule PhoenixxxWeb.SuperRegardsControllerTest do
     test "deletes chosen super_regards", %{conn: conn, super_regards: super_regards} do
       conn = delete(conn, Routes.super_regards_path(conn, :delete, super_regards))
       assert redirected_to(conn) == Routes.super_regards_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.super_regards_path(conn, :show, super_regards))
       end

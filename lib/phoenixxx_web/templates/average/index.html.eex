@@ -1,0 +1,28 @@
+<h1>Listing Average</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Average of page</th>
+      <th>Name of avg</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for average <- @average do %>
+    <tr>
+      <td><%= average.average_of_page %></td>
+      <td><%= average.name_of_avg %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.average_path(@conn, :show, average) %></span>
+        <span><%= link "Edit", to: Routes.average_path(@conn, :edit, average) %></span>
+        <span><%= link "Delete", to: Routes.average_path(@conn, :delete, average), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Average", to: Routes.average_path(@conn, :new) %></span>

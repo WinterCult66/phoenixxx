@@ -1,0 +1,18 @@
+<h1>Show Average</h1>
+
+<ul>
+
+  <li>
+    <strong>Average of page:</strong>
+    <%= @average.average_of_page %>
+  </li>
+
+  <li>
+    <strong>Name of avg:</strong>
+    <%= @average.name_of_avg %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.average_path(@conn, :edit, @average) %></span>
+<span><%= link "Back", to: Routes.average_path(@conn, :index) %></span>

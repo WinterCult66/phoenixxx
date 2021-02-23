@@ -1,5 +1,6 @@
 defmodule Phoenixxx.Regardsx do
   import Ecto.Query, only: [from: 2]
+
   @moduledoc """
   The Regardsx context.
   """
@@ -104,10 +105,12 @@ defmodule Phoenixxx.Regardsx do
   end
 
   def last_regard() do
-    query = from regard in Regards,
-          select: regard,
-          order_by: [desc: :inserted_at] ,
-          limit: 1
-     Repo.one(query)
+    query =
+      from regard in Regards,
+        select: regard,
+        order_by: [desc: :inserted_at],
+        limit: 1
+
+    Repo.one(query)
   end
 end

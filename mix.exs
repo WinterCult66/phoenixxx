@@ -20,7 +20,8 @@ defmodule Phoenixxx.MixProject do
   def application do
     [
       mod: {Phoenixxx.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools],
+      #applications: [:httpoison]
     ]
   end
 
@@ -43,7 +44,11 @@ defmodule Phoenixxx.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:quantum, "~> 3.0"}
+      {:quantum, "~> 3.0"},
+      {:floki, "~> 0.30.0"},
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.8"}
+      # {:html5ever, "~> 0.8.0"}
     ]
   end
 

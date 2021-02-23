@@ -8,6 +8,5 @@ defmodule Phoenixxx.Repo.Migrations.CreateRegards do
 
       timestamps()
     end
-
   end
 end

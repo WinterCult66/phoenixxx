@@ -75,6 +75,7 @@ defmodule PhoenixxxWeb.RegardsControllerTest do
     test "deletes chosen regards", %{conn: conn, regards: regards} do
       conn = delete(conn, Routes.regards_path(conn, :delete, regards))
       assert redirected_to(conn) == Routes.regards_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.regards_path(conn, :show, regards))
       end

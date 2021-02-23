@@ -4,8 +4,8 @@ defmodule Phoenixxx.Repo.Migrations.Regards do
   def change do
     create table(:people) do
       add :regard, :string
-      add :regardN,:integer
+      add :regardN, :integer
       timestamps()
+    end
   end
-end
 end
