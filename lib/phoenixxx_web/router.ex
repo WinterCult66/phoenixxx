@@ -17,7 +17,11 @@ defmodule PhoenixxxWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/users", TopicController
+
   end
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", PhoenixxxWeb do

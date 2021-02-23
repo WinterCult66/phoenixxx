@@ -4,10 +4,7 @@ defmodule ExplodingTopics2 do
 
   def task_of_topics() do
     topic_info_container = construct_document()
-
-    for topic <- topic_info_container do
-      analazing_topic(topic)
-    end
+    for topic <- topic_info_container, do: analazing_topic(topic)
   end
 
   defp construct_document() do
