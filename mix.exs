@@ -20,8 +20,8 @@ defmodule Phoenixxx.MixProject do
   def application do
     [
       mod: {Phoenixxx.Application, []},
-      extra_applications: [:logger, :runtime_tools],
-      #applications: [:httpoison]
+      extra_applications: [:logger, :runtime_tools]
+      # applications: [:httpoison]
     ]
   end
 

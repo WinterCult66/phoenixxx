@@ -7,7 +7,10 @@ defmodule Phoenixxx.HelperAverageTest do
     alias Phoenixxx.HelperAverage.Average
 
     @valid_attrs %{average_of_page: "some average_of_page", name_of_avg: "some name_of_avg"}
-    @update_attrs %{average_of_page: "some updated average_of_page", name_of_avg: "some updated name_of_avg"}
+    @update_attrs %{
+      average_of_page: "some updated average_of_page",
+      name_of_avg: "some updated name_of_avg"
+    }
     @invalid_attrs %{average_of_page: nil, name_of_avg: nil}
 
     def average_fixture(attrs \\ %{}) do

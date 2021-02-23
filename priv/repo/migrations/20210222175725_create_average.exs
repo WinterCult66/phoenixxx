@@ -8,6 +8,5 @@ defmodule Phoenixxx.Repo.Migrations.CreateAverage do
 
       timestamps()
     end
-
   end
 end

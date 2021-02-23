@@ -4,7 +4,11 @@ defmodule PhoenixxxWeb.TopicControllerTest do
   alias Phoenixxx.HelperTopic
 
   @create_attrs %{description: "some description", growth: "some growth", title: "some title"}
-  @update_attrs %{description: "some updated description", growth: "some updated growth", title: "some updated title"}
+  @update_attrs %{
+    description: "some updated description",
+    growth: "some updated growth",
+    title: "some updated title"
+  }
   @invalid_attrs %{description: nil, growth: nil, title: nil}
 
   def fixture(:topic) do
@@ -75,6 +79,7 @@ defmodule PhoenixxxWeb.TopicControllerTest do
     test "deletes chosen topic", %{conn: conn, topic: topic} do
       conn = delete(conn, Routes.topic_path(conn, :delete, topic))
       assert redirected_to(conn) == Routes.topic_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.topic_path(conn, :show, topic))
       end

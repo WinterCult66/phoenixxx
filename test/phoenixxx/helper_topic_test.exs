@@ -7,7 +7,11 @@ defmodule Phoenixxx.HelperTopicTest do
     alias Phoenixxx.HelperTopic.Topic
 
     @valid_attrs %{description: "some description", growth: "some growth", title: "some title"}
-    @update_attrs %{description: "some updated description", growth: "some updated growth", title: "some updated title"}
+    @update_attrs %{
+      description: "some updated description",
+      growth: "some updated growth",
+      title: "some updated title"
+    }
     @invalid_attrs %{description: nil, growth: nil, title: nil}
 
     def topic_fixture(attrs \\ %{}) do

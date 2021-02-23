@@ -4,7 +4,10 @@ defmodule PhoenixxxWeb.AverageControllerTest do
   alias Phoenixxx.HelperAverage
 
   @create_attrs %{average_of_page: "some average_of_page", name_of_avg: "some name_of_avg"}
-  @update_attrs %{average_of_page: "some updated average_of_page", name_of_avg: "some updated name_of_avg"}
+  @update_attrs %{
+    average_of_page: "some updated average_of_page",
+    name_of_avg: "some updated name_of_avg"
+  }
   @invalid_attrs %{average_of_page: nil, name_of_avg: nil}
 
   def fixture(:average) do
@@ -75,6 +78,7 @@ defmodule PhoenixxxWeb.AverageControllerTest do
     test "deletes chosen average", %{conn: conn, average: average} do
       conn = delete(conn, Routes.average_path(conn, :delete, average))
       assert redirected_to(conn) == Routes.average_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.average_path(conn, :show, average))
       end

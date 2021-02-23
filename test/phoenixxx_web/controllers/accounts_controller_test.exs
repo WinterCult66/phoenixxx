@@ -3,9 +3,30 @@ defmodule PhoenixxxWeb.AccountsControllerTest do
 
   alias Phoenixxx.HelperAccounts
 
-  @create_attrs %{email: "some email", last_name: "some last_name", name: "some name", name_company: "some name_company", num_document: 42, type_document: "some type_document"}
-  @update_attrs %{email: "some updated email", last_name: "some updated last_name", name: "some updated name", name_company: "some updated name_company", num_document: 43, type_document: "some updated type_document"}
-  @invalid_attrs %{email: nil, last_name: nil, name: nil, name_company: nil, num_document: nil, type_document: nil}
+  @create_attrs %{
+    email: "some email",
+    last_name: "some last_name",
+    name: "some name",
+    name_company: "some name_company",
+    num_document: 42,
+    type_document: "some type_document"
+  }
+  @update_attrs %{
+    email: "some updated email",
+    last_name: "some updated last_name",
+    name: "some updated name",
+    name_company: "some updated name_company",
+    num_document: 43,
+    type_document: "some updated type_document"
+  }
+  @invalid_attrs %{
+    email: nil,
+    last_name: nil,
+    name: nil,
+    name_company: nil,
+    num_document: nil,
+    type_document: nil
+  }
 
   def fixture(:accounts) do
     {:ok, accounts} = HelperAccounts.create_accounts(@create_attrs)
@@ -75,6 +96,7 @@ defmodule PhoenixxxWeb.AccountsControllerTest do
     test "deletes chosen accounts", %{conn: conn, accounts: accounts} do
       conn = delete(conn, Routes.accounts_path(conn, :delete, accounts))
       assert redirected_to(conn) == Routes.accounts_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.accounts_path(conn, :show, accounts))
       end

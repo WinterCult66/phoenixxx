@@ -76,9 +76,30 @@ defmodule Phoenixxx.HelperAccountsTest do
   describe "accounts" do
     alias Phoenixxx.HelperAccounts.Accounts
 
-    @valid_attrs %{email: "some email", last_name: "some last_name", name: "some name", name_company: "some name_company", num_document: 42, type_document: "some type_document"}
-    @update_attrs %{email: "some updated email", last_name: "some updated last_name", name: "some updated name", name_company: "some updated name_company", num_document: 43, type_document: "some updated type_document"}
-    @invalid_attrs %{email: nil, last_name: nil, name: nil, name_company: nil, num_document: nil, type_document: nil}
+    @valid_attrs %{
+      email: "some email",
+      last_name: "some last_name",
+      name: "some name",
+      name_company: "some name_company",
+      num_document: 42,
+      type_document: "some type_document"
+    }
+    @update_attrs %{
+      email: "some updated email",
+      last_name: "some updated last_name",
+      name: "some updated name",
+      name_company: "some updated name_company",
+      num_document: 43,
+      type_document: "some updated type_document"
+    }
+    @invalid_attrs %{
+      email: nil,
+      last_name: nil,
+      name: nil,
+      name_company: nil,
+      num_document: nil,
+      type_document: nil
+    }
 
     def accounts_fixture(attrs \\ %{}) do
       {:ok, accounts} =
@@ -115,7 +136,10 @@ defmodule Phoenixxx.HelperAccountsTest do
 
     test "update_accounts/2 with valid data updates the accounts" do
       accounts = accounts_fixture()
-      assert {:ok, %Accounts{} = accounts} = HelperAccounts.update_accounts(accounts, @update_attrs)
+
+      assert {:ok, %Accounts{} = accounts} =
+               HelperAccounts.update_accounts(accounts, @update_attrs)
+
       assert accounts.email == "some updated email"
       assert accounts.last_name == "some updated last_name"
       assert accounts.name == "some updated name"
@@ -126,7 +150,10 @@ defmodule Phoenixxx.HelperAccountsTest do
 
     test "update_accounts/2 with invalid data returns error changeset" do
       accounts = accounts_fixture()
-      assert {:error, %Ecto.Changeset{}} = HelperAccounts.update_accounts(accounts, @invalid_attrs)
+
+      assert {:error, %Ecto.Changeset{}} =
+               HelperAccounts.update_accounts(accounts, @invalid_attrs)
+
       assert accounts == HelperAccounts.get_accounts!(accounts.id)
     end
 

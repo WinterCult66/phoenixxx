@@ -26,11 +26,11 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 ##### JOB EVERY SECOND
-# config :phoenixxx, Job.Scheduler,
+config :phoenixxx, Job.Scheduler,
+  jobs: [
+    {"* * * * *", {ExplodingTopics2, :task_of_topics, []}}
+  ]
 
-# jobs: [
-#   {{:extended, "* * * * *"},      {Job.Task, :print, []}},
-# ]
 ##### JOB EVERY SECOND
 
 # Import environment specific config. This must remain at the bottom

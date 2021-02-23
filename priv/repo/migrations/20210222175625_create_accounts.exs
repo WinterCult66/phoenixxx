@@ -12,6 +12,5 @@ defmodule Phoenixxx.Repo.Migrations.CreateAccounts do
 
       timestamps()
     end
-
   end
 end

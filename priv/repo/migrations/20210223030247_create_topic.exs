@@ -9,6 +9,5 @@ defmodule Phoenixxx.Repo.Migrations.CreateTopic do
 
       timestamps()
     end
-
   end
 end
