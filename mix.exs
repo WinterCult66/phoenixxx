@@ -34,8 +34,8 @@ defmodule Phoenixxx.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4.7"},
-      {:phoenix_pubsub, "~> 1.1"},
+      {:phoenix, "~> 1.5.7"},
+      {:phoenix_pubsub, "~> 2.0"},
       {:phoenix_ecto, "~> 4.0"},
       {:ecto_sql, "~> 3.0"},
       {:postgrex, ">= 0.0.0"},
@@ -47,7 +47,8 @@ defmodule Phoenixxx.MixProject do
       {:quantum, "~> 3.0"},
       {:floki, "~> 0.30.0"},
       {:poison, "~> 3.1"},
-      {:httpoison, "~> 1.8"}
+      {:httpoison, "~> 1.8"},
+      {:phoenix_live_view, "~> 0.15.4"}
       # {:html5ever, "~> 0.8.0"}
     ]
   end

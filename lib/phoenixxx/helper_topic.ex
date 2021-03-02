@@ -108,6 +108,6 @@ defmodule Phoenixxx.HelperTopic do
   end
 
   def delete_all() do
-    #Repo.delete_all
+    # Repo.delete_all
   end
 end

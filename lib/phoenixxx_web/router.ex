@@ -4,9 +4,10 @@ defmodule PhoenixxxWeb.Router do
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
-    plug :fetch_flash
+    plug :fetch_live_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug :put_root_layout, {PhoenixxxWeb.LayoutView, :root}
   end
 
   pipeline :api do
@@ -18,10 +19,7 @@ defmodule PhoenixxxWeb.Router do
 
     get "/", PageController, :index
     resources "/topics", TopicController
-
   end
-
-
 
   # Other scopes may use custom stacks.
   # scope "/api", PhoenixxxWeb do

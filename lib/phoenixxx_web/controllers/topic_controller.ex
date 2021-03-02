@@ -60,7 +60,7 @@ defmodule PhoenixxxWeb.TopicController do
     |> redirect(to: Routes.topic_path(conn, :index))
   end
 
-  def delete_all(conn) do
+  def delete_all(_conn) do
     HelperTopic.delete_all()
   end
 end

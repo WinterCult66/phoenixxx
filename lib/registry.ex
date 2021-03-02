@@ -1,6 +1,7 @@
 defmodule Phoenixxx.Registry do
   use GenServer
   import Phoenixxx.HelperTopic
+
   # @interval 5 * 60 * 1000
 
   @impl true
@@ -12,9 +13,11 @@ defmodule Phoenixxx.Registry do
 
   @impl true
   def handle_call({:lookup, name}, _from, map_names) do
-    #{:reply, resultado de la busqueda, mapa }
-    {:reply, Map.fetch(map_names, name), map_names} #sync
+    # {:reply, resultado de la busqueda, mapa }
+    # sync
+    {:reply, Map.fetch(map_names, name), map_names}
   end
+
   # def handle_call({:lookup_2, name}, _from, map_names) do
   #   #{:reply, resultado de la busqueda, mapa }
   #   {:reply, Map.fetch(map_names, name), map_names} #sync
@@ -32,14 +35,14 @@ defmodule Phoenixxx.Registry do
 
   @impl true
   def handle_cast({:update, id, map}, _) do
-   result =  get_topic!(id) |>
-    update_topic(map)
+    result =
+      get_topic!(id)
+      |> update_topic(map)
+
     {:noreply, result}
   end
 
-
   def start_link(_) do
-
     GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
   end
 
@@ -50,8 +53,4 @@ defmodule Phoenixxx.Registry do
   def create(server, map) do
     GenServer.cast(server, map)
   end
-
-
-
-
 end

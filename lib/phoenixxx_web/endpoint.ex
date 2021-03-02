@@ -1,10 +1,17 @@
 defmodule PhoenixxxWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :phoenixxx
 
+  @session_options [
+    store: :cookie,
+    key: "_phoenixxx_key",
+    signing_salt: "ygDvJ2np"
+  ]
+
   socket "/socket", PhoenixxxWeb.UserSocket,
     websocket: true,
     longpoll: false
 
+  socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phx.digest
@@ -37,10 +44,7 @@ defmodule PhoenixxxWeb.Endpoint do
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
-  plug Plug.Session,
-    store: :cookie,
-    key: "_phoenixxx_key",
-    signing_salt: "ygDvJ2np"
+  plug Plug.Session, @session_options
 
   plug PhoenixxxWeb.Router
 end

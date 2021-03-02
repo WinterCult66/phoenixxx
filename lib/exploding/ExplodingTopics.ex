@@ -19,6 +19,7 @@ defmodule ExplodingTopics2 do
     [{_, _, [description]}] = Floki.find(topic, ".tileDescription")
     object = load_object_by_title("#{title}")
     growth_tmp = if object != nil, do: object.growth, else: nil
+
     cond do
       growth_tmp == nil ->
         topic = %{title: title, growth: "#{growth}", description: description}
@@ -27,6 +28,7 @@ defmodule ExplodingTopics2 do
       growth_tmp != nil and growth_tmp != growth ->
         map = %{growth: "#{growth}"}
         Phoenixxx.Registry.create(Phoenixxx.Registry, {:update, object.id, map})
+
       growth_tmp != nil ->
         IO.puts("")
     end
