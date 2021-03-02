@@ -26,9 +26,14 @@ defmodule Phoenixxx.Registry do
 
   @impl true
   def handle_cast({:create, topic}, _) do
-    IO.inspect(">>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-    IO.inspect(topic)
     result = create_topic(topic)
+    {:noreply, result}
+  end
+
+  @impl true
+  def handle_cast({:update, id, map}, _) do
+   result =  get_topic!(id) |>
+    update_topic(map)
     {:noreply, result}
   end
 

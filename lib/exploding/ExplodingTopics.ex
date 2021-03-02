@@ -25,8 +25,8 @@ defmodule ExplodingTopics2 do
         Phoenixxx.Registry.create(Phoenixxx.Registry, {:create, topic})
 
       growth_tmp != nil and growth_tmp != growth ->
-        get_topic!(object.id) |> update_topic(%{growth: "#{growth}"})
-
+        map = %{growth: "#{growth}"}
+        Phoenixxx.Registry.create(Phoenixxx.Registry, {:update, object.id, map})
       growth_tmp != nil ->
         IO.puts("")
     end
