@@ -21,7 +21,8 @@ defmodule ExplodingTopics2 do
     growth_tmp = if object != nil, do: object.growth, else: nil
     cond do
       growth_tmp == nil ->
-        create_topic(%{title: title, growth: "#{growth}", description: description})
+        topic = %{title: title, growth: "#{growth}", description: description}
+        Phoenixxx.Registry.create(Phoenixxx.Registry, {:create, topic})
 
       growth_tmp != nil and growth_tmp != growth ->
         get_topic!(object.id) |> update_topic(%{growth: "#{growth}"})

@@ -12,7 +12,8 @@ defmodule Phoenixxx.Application do
       Phoenixxx.Repo,
       # Start the endpoint when the application starts
       PhoenixxxWeb.Endpoint,
-      Job.Scheduler
+      Job.Scheduler,
+      {Phoenixxx.Registry, name: Phoenixxx.Registry}
       # Starts a worker by calling: Phoenixxx.Worker.start_link(arg)
       # {Phoenixxx.Worker, arg},
     ]
