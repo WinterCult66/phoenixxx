@@ -19,6 +19,8 @@ defmodule PhoenixxxWeb.Router do
 
     get "/", PageController, :index
     resources "/topics", TopicController
+    live "/topics-live", TopicLive
+    #live "/topics-live", TopicLive.Index, :index
   end
 
   # Other scopes may use custom stacks.
