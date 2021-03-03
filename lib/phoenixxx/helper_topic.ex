@@ -108,6 +108,7 @@ defmodule Phoenixxx.HelperTopic do
   end
 
   def delete_all() do
-    # Repo.delete_all
+    query = from(t in Topic)
+    Repo.delete_all(query);
   end
 end
