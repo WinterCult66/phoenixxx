@@ -1,4 +1,4 @@
-defmodule PhoenixxxWeb.Release do
+defmodule Phoenixxx.Release do
   @app :phoenixxx
 
   def migrate do
