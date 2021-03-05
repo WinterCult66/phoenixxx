@@ -56,7 +56,6 @@ defmodule PhoenixxxWeb.TopicLive do
   end
 
   def handle_event("delete_data", _value, socket) do
-    IO.puts("=>>>>>>>>>>>>>>>>>>>>>>>>> ")
     delete_all()
     topic = list_topic()
     {:noreply, assign(socket, topic: topic)}
