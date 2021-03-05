@@ -9,7 +9,7 @@ networks:
 
 services:
   app:
-    image: phoenixxx:0.1.0
+    image: wintercult/phoenixxx:0.1.0
     ports:
       - "80:4000"
     env_file:
